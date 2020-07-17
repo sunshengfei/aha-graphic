@@ -1,0 +1,27 @@
+{
+  "name": "aha-graphic",
+  "version": "0.0.1",
+  "description": "Graphic Tools",
+  "main": "index.js",
+  "scripts": {
+    "compile": "babel src/ -d lib/",
+    "test": "snyk test"
+  },
+  "keywords": [
+    "Rect",
+    "RectF"
+  ],
+  "author": "freddon",
+  "email": "gsiner@live.com",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "snyk": "^1.91.0"
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "styles"
+  ]
+}
