@@ -8,7 +8,7 @@ npm i aha-graphic
 ### 使用
 
 ```
-// import ahasvg from 'aha-svg'
+// import ahasvg from 'aha-graphic'
 import { Rect,RectF} from 'aha-graphic'
 
 let rect=new Rect(
@@ -28,3 +28,5 @@ let rectF=rect.mapToRectF(); // left top right bottom
 //rectF.scale(ratio)
 //...
 ```
+
+源码仓库：[https://github.com/sunshengfei/aha-graphic]

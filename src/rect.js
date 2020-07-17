@@ -1,11 +1,40 @@
+// MIT License
 
+// Copyright (c) 2020 FredDon
+
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
 
 class Rect {
   constructor(x, y, width, height) {
-    this.x = x;
-    this.y = y;
-    this.width = width;
-    this.height = height;
+    if (arguments[0] instanceof Rect) {
+      let rect = arguments[0]
+      this.x = rect.x;
+      this.y = rect.y;
+      this.width = rect.width;
+      this.height = rect.height;
+    } else {
+      this.x = x;
+      this.y = y;
+      this.width = width;
+      this.height = height;
+    }
+
   }
 
   mapToRectF() {
@@ -22,10 +51,29 @@ class Rect {
 class RectF {
 
   constructor(left, top, right, bottom) {
-    this.left = left;
-    this.top = top;
-    this.right = right;
-    this.bottom = bottom;
+    if (arguments[0] instanceof RectF) {
+      let rectF = arguments[0]
+      this.left = rectF.left;
+      this.top = rectF.top;
+      this.right = rectF.right;
+      this.bottom = rectF.bottom;
+    } else {
+      this.left = left;
+      this.top = top;
+      this.right = right;
+      this.bottom = bottom;
+    }
+  }
+
+  mapToRect() {
+    let width = this.width(),
+      height = this.height()
+    return new Rect(
+      this.left,
+      this.top,
+      width,
+      height
+    )
   }
 
   isEmpty() {
